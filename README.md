@@ -8,10 +8,29 @@ This repo demonstrates an end-to-end Docker-based MLOps pipeline for the Porto S
     docker build -f docker/Dockerfile -t porto-mlops .
 
 #### Run containers with docker (automated bash setup):
-For training (Data prep -> Train -> Eval)
+Training script (Data prep -> Train -> Eval)
 
     docker run -v $(pwd)/data:/data -v $(pwd)/output:/output porto-mlops:latest ./docker/run_train_pipeline.sh
 
-For inference (Data prep -> Inference)
+Inference script (Data prep -> Inference)
 
     docker run -v $(pwd)/data:/data -v $(pwd)/models:/models -v $(pwd)/output:/output porto-mlops:latest ./docker/run_infer_pipeline.sh
+
+Structure:
+
+safe_driver_mlops/
+├── data/
+│   ├── test.csv.zip
+│   ├── train.csv.zip
+│   └── unseen.csv
+├── src/
+│   ├── data_prep.py
+│   ├── train_model.py
+│   ├── evaluate.py
+│   └── inference.py
+├── docker/
+│   ├── run_train_pipeline.sh
+│   └── run_infer_pipeline.sh
+│   └── Dockerfile
+├── requirements.txt
+└── README.md

@@ -18,19 +18,20 @@ Inference script (Data prep -> Inference)
 
 Structure:
 
-safe_driver_mlops/
-├── data/
-│   ├── test.csv.zip
-│   ├── train.csv.zip
-│   └── unseen.csv
-├── src/
-│   ├── data_prep.py
-│   ├── train_model.py
-│   ├── evaluate.py
-│   └── inference.py
-├── docker/
-│   ├── run_train_pipeline.sh
-│   └── run_infer_pipeline.sh
-│   └── Dockerfile
-├── requirements.txt
-└── README.md
+    safe_driver_mlops/
+    ├── data/
+    │   ├── train.csv.zip
+    │   ├── test.csv.zip
+    │   └── unseen.csv
+    ├── src/
+    │   ├── data_prep.py
+    │   ├── train_model.py
+    │   ├── evaluate.py
+    │   └── inference.py
+    ├── docker/
+    │   ├── run_train_pipeline.sh
+    │   ├── run_infer_pipeline.sh
+    │   └── Dockerfile
+    ├── requirements.txt
+    └── README.md
+
